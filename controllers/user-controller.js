@@ -56,7 +56,7 @@ const userController = {
 
 	// delete a user by it's ID
 	// /api/users/:id
-	removeUser({ params }, res) {
+	deleteUser({ params }, res) {
 		User.findOneAndDelete({ _id: params.id })
 			.then(dbUserData => res.json(dbUserData))
 			.catch(err => res.json(err));
